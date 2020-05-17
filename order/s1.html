@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="en" class="hb-loaded">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<meta content="telephone=no" name="format-detection">
+	<meta name="keywords" content="Leisa">
+	<meta name="description" content="Leisa">
+	<title>Leisa商城</title>
+	<link rel="icon" href="photo/sa.png" type="image/x-icon">
+	<link rel="shortcut icon" href="photo/sa.png" type="image/x-icon">
+
+	<link href="global.css" rel="stylesheet" type="text/css">
+	<link href="themes.css" rel="stylesheet" type="text/css">
+	<link href="user.css" rel="stylesheet" type="text/css">
+	<link href="style.css" rel="stylesheet" type="text/css">
+	<script type="text/javascript" src="jquery-1.7.2.min.js"></script>
+	<script type="text/javascript" src="en.js"></script>
+	<script type="text/javascript" src="global.js"></script>
+	<script type="text/javascript" src="themes.js"></script>
+	<script type="text/javascript" src="user.js"></script>
+	<script type="text/javascript" src="main.js"></script>
+	<link href="responsive.css" rel="stylesheet" type="text/css">
+	<link rel="stylesheet" href="../Leisa/css/common.css">
+</head>
+<body class="w_1200">
+
+<div class="ueeshop_responsive_header">
+	<div class="header">
+		<h1 class="logo fl pic_box"><a href="../Leisa/home.html"><img src="photo/logo.png" alt="Kamillas"><em></em></a></h1>
+		<div class="func">
+			<div class="btn search_btn dialog">
+			</div>
+			<div class="btn menu_btn" id="click_nav_b">
+			</div>
+		</div>
+	</div>
+
+	<div class="language trans">
+		<div class="close_btn">
+			<span></span>
+		</div>
+		<div class="content">
+		</div>
+	</div>
+
+	<div class="nav trans">
+		<div class="list ">
+			<a href="../Leisa/home.html" class="title home_color" style="letter-spacing: 2px;">Leisa</a>
+		</div>
+		<div class="list ">
+			<a href="../Products/products.html" class="title" style="color: #f5e65d;">线上商城</a>
+		</div>
+		<div class="list ">
+			<a href="javascritp:;" class="title about_color">联系客服</a>
+		</div>
+	</div>
+	<div class="son_nav trans">
+	</div>
+	<div class="nav_bg">
+	</div>
+</div>
+
+<script language="javascript">
+	$('.ueeshop_responsive_header .menu_btn').on('click',function(){
+		if($(this).hasClass('on')){
+			$(this).removeClass('on');
+			$('.ueeshop_responsive_header').find('.nav, .nav_bg, .son_nav').removeClass('on');
+			$('body').attr('style', '');
+		}else{
+			$(this).addClass('on');
+			$('.ueeshop_responsive_header').find('.nav, .nav_bg').addClass('on');
+			$('body').css({'overflow':'hidden'});
+		}
+	});
+	$('.ueeshop_responsive_header .language_btn').on('click',function(){
+		if($(this).hasClass('on')){
+			$(this).removeClass('on');
+			$('.ueeshop_responsive_header .language').removeClass('on');
+			$('body').attr('style','');
+		}else{
+			$(this).addClass('on');
+			$('.ueeshop_responsive_header .language').addClass('on');
+			$('.ueeshop_responsive_header').find('.menu_btn, .nav_bg, .nav, .son_nav').removeClass('on');
+			$('body').css({'overflow':'hidden'});
+		}
+	});
+	$('.ueeshop_responsive_header .search_btn').on('click',function(){
+		if($(this).hasClass('on')){
+			$(this).removeClass('on');
+			$('.ueeshop_responsive_header .resp_search_box').removeClass('on');
+		}else{
+			$(this).addClass('on');
+			$('.ueeshop_responsive_header .resp_search_box').addClass('on');
+			$('.ueeshop_responsive_header').find('.menu_btn, .nav_bg, .nav, .son_nav').removeClass('on');
+		}
+	});
+	$('.ueeshop_responsive_header .nav_bg').on('click',function(){
+		$(this).removeClass('on');
+		$('.ueeshop_responsive_header').find('.nav, .son_nav, .menu_btn').removeClass('on');
+	});
+	$('.ueeshop_responsive_header .resp_search_box .close_btn span').on('click',function(){
+		$(this).parents('.resp_search_box').removeClass('on');
+		$('.ueeshop_responsive_header .search_btn').removeClass('on');
+	});
+	$('.ueeshop_responsive_header .language .close_btn span').on('click',function(){
+		$(this).parents('.language').removeClass('on');
+		$('.ueeshop_responsive_header .language_btn').removeClass('on');
+	})
+	$('.ueeshop_responsive_header .nav .list .title').on('click', function (e){
+		$('.ueeshop_responsive_header .hasub .sub').removeClass('on');
+		$('.ueeshop_responsive_header .son_nav').html($(this).parents('.list').find('.sub').html()).addClass('on');
+	});
+	$('.ueeshop_responsive_header .son_nav').on('click','.cate_close', function (e){
+		$('.ueeshop_responsive_header .son_nav').removeClass('on');
+	})
+	$('.ueeshop_responsive_header .son_nav').on('click', '.son_nav_title',function(){
+		$(this).parent('.item').find('.third_nav').toggle('on');
+		$(this).toggleClass('on');
+	});
+</script>
+
+<div id="header" class="responsive_pc_header">
+	<div class="header">
+		<div class="logo photo">
+			<a href="../Leisa/home.html"><img src="photo/logo.png" alt="Kamillas"><span></span></a>
+		</div>
+		<div class="func">
+			<div class="icon search_icon">
+				<img src="photo/search_icon.png" alt="">
+			</div>
+			<div class="icon dialog">
+				<a href="javascritpt:;"><img src="photo/user_icon1.png" alt="" style="width: 21px;height: 23px;"></a>
+			</div>
+			<div class="icon inquiry_icon">
+				<a href="javascritpt:;"><img src="photo/inquiry_icon.png" alt=""></a>
+				<span>0</span>
+			</div>
+		</div>
+
+		<div id="nav">
+			<div class="list ">
+				<a href="../Leisa/home.html" title="Leisa" style="letter-spacing: 2px;" class="ziti">Leisa</a>
+			</div>
+			<div class="list ">
+				<a href="../Products/products.html" title="线上商城" style="color: #f5e65d;">线上商城</a>
+			</div>
+			<div class="list ">
+				<a href="javascritpt:;" title="联系客服" class="ziti">联系客服</a>
+			</div>
+		</div>
+
+		<div class="search_box trans" style="opacity: 0;">
+			<form class="search" action="#" method="get">
+				<input autocomplete="off" disableautocomplete="" type="text" class="fl" name="Keyword" placeholder="请输入关键字" notnull="">
+				<input type="submit" class="fr" value="Search">
+				<div class="clear">
+				</div>
+			</form>
+		</div>
+
+		<div class="clear">
+		</div>
+	</div>
+</div>
+
+<!--登陆验证-->
+<script>
+	$(function(){
+		var $el = $('.dialog');
+		$el.hDialog();
+		//返回顶部
+		$.goTop();
+		//提交并验证表单
+		$('.submitBtn').click(function() {
+			var PhoneReg = /^0{0,1}(13[0-9]|15[0-9]|153|156|18[7-9])[0-9]{8}$/ ; //手机正则
+			var $phone = $('.phone');
+			if($phone.val() == ''){
+				alert('手机还没填呢...'); $phone.focus();
+			}else if(!PhoneReg.test($phone.val())){
+				alert('手机格式错咯...'); $phone.focus();
+			}else{
+				alert('提交成功，2秒后自动关闭',2000,true);
+				setTimeout(function(){
+					//$el.hDialog('close',{box:'#HBox'},'http://smwell.sinaapp.com/');  //也可以加跳转链接哦~
+					$el.hDialog('close',{box:'#HBox'});
+				},2000);
+			}
+		});
+	});
+</script>
+
+<!--登陆html-->
+<div id="HBox" style="display: none;">
+	<ul class="user_load1">
+		<li>
+			<input style="display: none" type="radio" name="radio" id="radio1" checked="checked" >
+			<label for="radio1" style="border-right:1px #ddd solid;font-size: 15px;">登陆</label>
+			<div>
+				<form class="form1" action="#" method="post" onsubmit="return false;">
+					<ul class="popup">
+						<li style="margin-top: 40px;">
+							<input type="text" name="phone" value="" placeholder="请输入手机号或用户名" class="ipt email">
+						</li>
+						<li>
+							<input type="text" name="password" value="" placeholder="密码" class="ipt email">
+						</li>
+						<li style="margin-top: 0px;">
+							<input type="submit" value="登录" class="submitBtn" style="margin-top: 20px;border: none;">
+						</li>
+						<li style="margin-top: 10px;text-align: center;width: 300px;" class="ho_a">
+							<a href="javascript:;" style="color: #fff;margin-right: 10px;">验证码登录</a>
+							<a href="javascript:;" style="color: #fff;">找回密码</a>
+						</li>
+
+					</ul>
+				</form>
+			</div>
+		</li>
+		<li>
+			<input style="display: none" type="radio" name="radio" id="radio2">
+			<label for="radio2" style="font-size: 15px;">注册</label>
+			<div>
+				<form class="form2" action="#" method="post" onsubmit="return false;">
+					<ul class="popup">
+						<li>
+							<input type="text" name="phone" value="" placeholder="请输入手机号" class="ipt email">
+						</li>
+						<li style="position: relative;height: 35px;">
+							<input style="width: 140px;" class="de_style_bug" type="text" class="kapkey" maxlength="6" placeholder="验证码">
+							<button class="de_style_bug2" style="position: absolute; top: 0px;right: -17px;height: 35px;border-radius: 2px; margin-left:8px;width: 92px;color: #fff;background: #fdce24;border: none;">获取验证码</button>
+						</li>
+						<li>
+							<input type="text" name="password" value="" placeholder="请输入密码" class="ipt email">
+						</li>
+						<li style="margin-top: 5px;margin-bottom: 0;">
+							<label style="width: 300px">
+								<input type="checkbox" style="height: 14px;float: left;" checked><span style="letter-spacing: 0px;font-size: 10px;float: left;padding-left: 5px;margin-top: 2px;">我接受《Leisa服务协议条款》</span>
+							</label>
+						</li>
+						<li style="margin-top: 0px;"><input type="submit" value="注册并登录" class="submitBtn2" style="margin-top: 0;border: none;"></li>
+					</ul>
+				</form>
+			</div>
+		</li>
+	</ul>
+
+</div>
+
+
+<!--商城主页图-->
+<div class="in_ad">
+	<div class="bxSlide-outter" style="overflow:hidden;margin-left:auto;margin-right:auto; width:1920px; max-width:100%; max-height:300px">
+		<img src="photo/f46118f2b4.jpg" width="100%">
+	</div>
+</div>
+
+<!--加载中间内容-->
+<div id="main" class="w page_detail goods">
+	<div class="contenter">
+		<div class="ueeshop_responsive_position s1">
+			<div class="position">
+				<a href="../Products/products.html">外出便装</a> &gt; <a href="../Products/products.html">时尚</a> &gt; <a class="po_cur" href="javascript:;">Doketo基本系带上衣</a>
+			</div>
+		</div>
+
+		<div class="ueeshop_responsive_products_detail ">
+			<div class="gallery">
+				<div class="bigimg">
+					<a href="javascript:;" class="MagicZoom" id="zoom" rel="zoom-position:custom; zoom-width:350px; zoom-height:350px;" title="" style="position: relative; display: block; text-decoration: none; outline: 0px; width: 498px;"><img src="s1/7a5612b6d2.jpg" id="bigimg_src" alt="Doketo基本系带上衣" style="visibility: visible; zoom: 1; opacity: 1;">
+					</a>
+				</div>
+				<div class="left_small_img">
+					<span class="slide pic_box on" pic="s1/7a5612b6d2.jpg" big="s1/7a5612b6d2.jpg">
+					<a href="javascript:;"><img src="s1/7a5612b6d2.jpg.240x240.jpg" alt="1111"><em></em></a>
+					<img src="s1/7a5612b6d2.jpg" style="display:none;">
+					<img src="s1/7a5612b6d2.jpg" style="display:none;">
+					</span>
+					<span class="slide pic_box" pic="s1/721083ad7d.jpg" big="s1/721083ad7d.jpg">
+					<a href="javascript:;"><img src="s1/721083ad7d.jpg.240x240.jpg" alt="222"><em></em></a>
+					<img src="s1/721083ad7d.jpg" style="display:none;">
+					<img src="s1/721083ad7d.jpg" style="display:none;">
+					</span>
+					<span class="slide pic_box" pic="s1/c59aa70bff.jpg" big="s1/c59aa70bff.jpg">
+					<a href="javascript:;"><img src="s1/c59aa70bff.jpg.240x240.jpg" alt="333"><em></em></a>
+					<img src="s1/c59aa70bff.jpg" style="display:none;">
+					<img src="s1/c59aa70bff.jpg" style="display:none;">
+					</span>
+					<span class="slide pic_box" pic="s1/88a1bcd257.jpg" big="s1/88a1bcd257.jpg">
+					<a href="javascript:;"><img src="s1/88a1bcd257.jpg.240x240.jpg" alt="444"><em></em></a>
+					<img src="s1/88a1bcd257.jpg" style="display:none;">
+					<img src="s1/88a1bcd257.jpg" style="display:none;">
+					</span>
+				</div>
+				<div class="products_img">
+					<div class="bx-wrapper" style="max-width: 100%; margin: 0px auto;">
+						<div class="bx-viewport" style="width: 100%; overflow: hidden; position: relative; height: 0px;">
+							<ul style="width: 715%; position: relative; transition-duration: 0.5s; transform: translate3d(0px, 0px, 0px);">
+								<li style="float: left; list-style: none; position: relative; width: 100px; margin-right: 10px;" class="bx-clone"><img src="s1/54dab35be4.jpg"></li>
+								<li style="float: left; list-style: none; position: relative; width: 100px; margin-right: 10px;"><img src="s1/7a5612b6d2.jpg"></li>
+								<li style="float: left; list-style: none; position: relative; width: 100px; margin-right: 10px;"><img src="s1/721083ad7d.jpg"></li>
+								<li style="float: left; list-style: none; position: relative; width: 100px; margin-right: 10px;"><img src="s1/c59aa70bff.jpg"></li>
+								<li style="float: left; list-style: none; position: relative; width: 100px; margin-right: 10px;"><img src="s1/88a1bcd257.jpg"></li>
+								<li style="float: left; list-style: none; position: relative; width: 100px; margin-right: 10px;"><img src="s1/54dab35be4.jpg"></li>
+								<li style="float: left; list-style: none; position: relative; width: 100px; margin-right: 10px;" class="bx-clone"><img src="s1/7a5612b6d2.jpg"></li>
+							</ul>
+						</div>
+
+					</div>
+				</div>
+			</div>
+
+
+
+			<div class="info">
+				<h1 class="name" style="font-weight: bold;color: #000;">Doketo基本系带上衣</h1>
+				<p style="margin-top: 5px;color: #666"><span style="letter-spacing: 1px;">产品编号 :</span> S101</p>
+				<div class="number">
+
+				</div>
+
+				<p style="font-family: 'Poppins-Regular';font-weight: bold;margin-top: 5px;">￥ 2,600 </p>
+				<hr style="margin: 10px 0px 0px 0px;width: 314px;">
+
+
+				<p style="float: left;line-height: 40px; color: #666;margin-right:40px;">
+					<img src="photo/line-label-where.svg" alt="" style="vertical-align: middle;margin-right: 8px;">尺码
+				</p>
+				<div class="content">
+					<div class="select">
+						<p data-value="选择尺码" style="font-size: 14px;color: #666">选择尺码</p>
+						<ul>
+							<li data-value="S">S</li>
+							<li data-value="M">M</li>
+							<li data-value="L">L</li>
+						</ul>
+					</div>
+				</div>
+				<p style="float: left;line-height: 40px; color: #666; cursor: pointer;margin-left: 40px;">
+					尺码对照表
+				</p>
+
+				<div class="clear">
+				</div>
+				<script>
+					$(function(){
+						$(".select p").click(function(e){
+							$(".select").toggleClass('open');
+							e.stopPropagation();
+						});
+
+						$(".content .select ul li").click(function(e){
+							var _this=$(this);
+							$(".select > p").text(_this.attr('data-value'));
+							_this.addClass("Selected").siblings().removeClass("Selected");
+							$(".select").removeClass("open");
+							e.stopPropagation();
+						});
+
+						$(document).on('click',function(){
+							$(".select").removeClass("open");
+						})
+
+					});
+				</script>
+
+
+				<hr style="width: 314px;">
+
+
+				<div class="button">
+					<a href="javascript:;" class="add_to_inquiry" data="353" id="shopping_cart">+ 购物车</a>
+					<div class="clear">
+					</div>
+				</div>
+
+				<div class="share">
+					<div style="clear: both;margin-top: 40px;">
+						<div id="atstbx">
+							<span id="at-1f4745da-79e9-4320-ade8-85c6edefd43c" class="at4-visually-hidden">将此商品分享至社交媒体</span>
+                            <div style="margin-top: 10px;">
+								<img src="photo/weixin.png" alt="" style="width: 30px;height: 30px;cursor: pointer;margin-right: 10px;">
+								<img src="photo/weibo.png" alt=""  style="width: 30px;height: 30px;cursor: pointer;">
+							</div>
+						</div>
+					</div>
+				</div>
+
+
+                <div style="margin-top: 20px;">
+                    <ul type="disc">
+                        <li style="margin-bottom: 10px;">订单将根据库存情况予以确认，并在确认完毕后2至4个工作日内配送。您可以使用我们提供的快递单号追踪订单的配送进程。</li>
+                        <li style="margin-bottom: 10px;">您可在订单交货后的7天内退回一件或多件商品。退货免运费。请注意，热压烫印定制商品不可退货。</li>
+                        <li style="margin-bottom: 10px;">如您有任何问题和疑虑，请致电 4006001913与我们联系。</li>
+                    </ul>
+                </div>
+			</div>
+			<div class="clear">
+			</div>
+			<div class="description">
+				<div class="title">
+					<span>商品描述</span>
+				</div>
+				<div class="contents" style="display: block;">
+					<div id="global_editor_contents">
+						<strong><span style="font-size:18px;letter-spacing: 2px;">2018新款热辣蕾丝镶嵌主教袖孔眼刺绣连衣裙</span></strong><br>
+						<br>
+						<span style="font-size:14px;"><strong>Size &amp; Fit：</strong><br>
+型号为S码
+						<br>
+模特尺寸：身高175cm，胸围81cm
+						<br>
+腰围62cm，臀部88cm
+						<br>
+项目度量：
+						<br>
+						<br>
+
+						<strong style="letter-spacing: 1px">更多细节：</strong><br>
+							<ul type="disc" id="ide_style">
+								<li>双面粘胶纤维面料</li>
+								<li>正面与背面低领口设计</li>
+								<li>带对比色钮扣的正面饰带</li>
+								<li>粘胶纤维，聚酰胺纤维，弹性纤维面料</li>
+								<li>中束收腰不压身，弹性腰封</li>
+							</ul>
+						</span>
+						<div>
+							<br>
+							<br>
+							<img src="s1/12c577f22f.jpg"><br>
+							<br>
+							<img src="s1/0425d35847.jpg"><br>
+							<br>
+							<img src="s1/f6d148d438.jpg"><br>
+							<br>
+							<img src="s1/6d13d99396.jpg"><br>
+							<br>
+							<img src="s1/0f7dc7f8eb.jpg"><br>
+							<br>
+							&nbsp;
+						</div>
+					</div>
+				</div>
+				<div class="clear">
+				</div>
+			</div>
+		</div>
+		<script>
+			$(document).ready(function(){
+				product_gallery();
+				$('.ueeshop_responsive_products_detail .products_img ul').bxSlider({
+					slideWidth:$('.ueeshop_responsive_products_detail .products_img ul').width(),
+					pager:false
+				});
+				$('.ueeshop_responsive_products_detail .title span').click(function(){
+					showthis('.ueeshop_responsive_products_detail .title span', '.ueeshop_responsive_products_detail .description .contents', $(this).index(), 'cur');
+				});
+				$('.ueeshop_responsive_products_detail .description .contents:first').show();
+			});
+		</script>
+	</div>
+</div>
+
+<!--页脚-->
+<div id="footer">
+	<div class="w">
+		<div class="footer_top auto_hi">
+			<div class="list">
+				<div class="title">
+					分类
+				</div>
+				<div class="item text-over">
+					<a href="#">便装</a>
+				</div>
+				<div class="item text-over">
+					<a href="#">连衣裙</a>
+				</div>
+				<div class="item text-over">
+					<a href="#">连体裤和上衣</a>
+				</div>
+				<div class="item text-over">
+					<a href="#">夹克和运动夹克
+					</a>
+				</div>
+			</div>
+			<div class="list">
+				<div class="title">
+					合作伙伴
+				</div>
+				<div class="item text-over">
+					<a href="https://www.aliyun.com">阿里云</a>
+				</div>
+				<div class="item text-over">
+					<a href="https://www.baidu.com">百度</a>
+				</div>
+				<div class="item text-over">
+					<a href="https://www.meituan.com">美团</a>
+				</div>
+				<div class="item text-over">
+					<a href="https://www.didiglobal.com/">滴滴出行</a>
+				</div>
+			</div>
+			<div class="list">
+				<div class="title">
+					联系我们
+				</div>
+				<div class="item address">
+					shanananankai
+				</div>
+				<div class="item phone">
+					15626448234
+				</div>
+				<div class="item email">
+					1197889075@qq.com
+				</div>
+			</div>
+			<div class="list contact_list">
+				<div class="title">
+					Wechat
+				</div>
+				<div><img src="photo/ewm.jpg" alt="" style="height: 120px;width: 120px;"></div>
+
+			</div>
+			<div class="list_box">
+			</div>
+			<div class="clear">
+			</div>
+		</div>
+		<style>
+			.footer_down a{
+				color: #000;
+			}
+		</style>
+		<div class="footer_down w" >
+			<div class="link">
+				<div class="item">
+					<a href="../Leisa/home.html" title="Leisa">Leisa</a>
+				</div>
+				<div class="item">
+					<a href="../Products/products.html" title="News">线上商城</a>
+				</div>
+				<div class="item">
+					<a href="../Leisa/about.html" title="Feedback">关于我们</a>
+				</div>
+			</div>
+			<div class="share foot_share">
+			</div>
+			<p id="copymsg" class="w copyright">
+				<a href="http://www.miitbeian.gov.cn/" style="color: #000;font-size: 10px;">粤ICP备18135239号</a>
+			</p>
+		</div>
+	</div>
+</div>
+
+<div align="center">
+	<script type="text/javascript" src="analytics.js"></script>
+</div>
+<script src="../Leisa/js/jquery.hDialog.js"></script>
+
+</body>
+</html>

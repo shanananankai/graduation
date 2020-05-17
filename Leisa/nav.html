@@ -1,0 +1,308 @@
+<!--选中导航的颜色-->
+<!--one #ff6347-->
+<!--#eb6147  红偏粉-->
+<!--#f5e65d  logo冷黄-->
+<!--#fdce24  字体颜色黄-->
+
+<div id="load_nav">
+    <!--移动端导航-->
+    <div class="ueeshop_responsive_header">
+        <div class="header">
+            <h1 class="logo fl pic_box"><a href="home.html"><img src="./photo/logo.png" alt="Kamillas"><em></em></a></h1>
+            <div class="func">
+                <div class="btn search_btn bounceInDown dialog" style="padding: 0px">
+                </div>
+                <div class="btn menu_btn" style="padding: 0px">
+                </div>
+            </div>
+
+            <div style="position: absolute;right: 34px;bottom: -116px;">
+                <img id="music_btn_u" src="image/suspend.png" style="width: 44px;height: 36px;" onclick="music_start_u()">
+            </div>
+            <audio id="video_u" src="https://qiniuyun.shankai.top/leisa_music.mp3" preload="auto" loop="loop"></audio>
+            <script>
+                var myVideo_u=document.getElementById("video_u");
+                var limi_u = 0;
+                function music_start_u(){
+                    limi_u ++;
+                    if(limi_u%2==0){
+                        myVideo_u.pause();
+                        $("#music_btn_u").attr("src","image/suspend.png");
+                    }else{
+                        myVideo_u.play();
+                        $("#music_btn_u").attr("src","image/start.png");
+                    }
+                }
+            </script>
+        </div>
+        <div class="search_box trans" style="opacity: 0;">
+            <div class="close_btn">
+                <span></span>
+            </div>
+            <div class="clear">
+            </div>
+            <form class="search" action="#" method="get">
+                <input type="text" class="" name="Keyword" placeholder="请输入关键字">
+                <input type="submit" class="" value="">
+                <div class="clear">
+                </div>
+            </form>
+        </div>
+        <div class="language trans">
+            <div class="close_btn">
+                <span></span>
+            </div>
+            <div class="content">
+            </div>
+        </div>
+        <div class="nav trans">
+            <div class="list ">
+                <a href="home.html" class="title home_color" style="letter-spacing: 2px;">Leisa</a>
+            </div>
+            <div class="list ">
+                <a href="../Products/products.html" class="title">线上商城</a>
+            </div>
+            <div class="list ">
+                <a href="about.html" class="title about_color">关于我们</a>
+            </div>
+        </div>
+        <div class="son_nav trans">
+        </div>
+        <div class="nav_bg">
+        </div>
+    </div>
+
+    <div class="ueeshop_responsive_header header_blank">
+    </div>
+
+
+    <script>
+        var url = document.URL;
+        if (url.indexOf("home") != -1 ){
+            $(".home_color").css({"color":"#f5e65d"});
+        }
+        if (url.indexOf("about") != -1 ){
+            $(".about_color").css({"color":"#f5e65d"});
+        }
+    </script>
+
+    <script language="javascript">
+        $('.ueeshop_responsive_header .menu_btn').on('click',function(){
+            if($(this).hasClass('on')){
+                $(this).removeClass('on');
+                $('.ueeshop_responsive_header').find('.nav, .nav_bg, .son_nav').removeClass('on');
+                $('body').attr('style', '');
+            }else{
+                $(this).addClass('on');
+                $('.ueeshop_responsive_header').find('.nav, .nav_bg').addClass('on');
+                $('body').css({'overflow':'hidden'});
+            }
+        });
+        $('.ueeshop_responsive_header .language_btn').on('click',function(){
+            if($(this).hasClass('on')){
+                $(this).removeClass('on');
+                $('.ueeshop_responsive_header .language').removeClass('on');
+                $('body').attr('style','');
+            }else{
+                $(this).addClass('on');
+                $('.ueeshop_responsive_header .language').addClass('on');
+                $('.ueeshop_responsive_header').find('.menu_btn, .nav_bg, .nav, .son_nav').removeClass('on');
+                $('body').css({'overflow':'hidden'});
+            }
+        });
+        $('.ueeshop_responsive_header .search_btn').on('click',function(){
+            if($(this).hasClass('on')){
+                $(this).removeClass('on');
+                $('.ueeshop_responsive_header .search_box').removeClass('on');
+            }else{
+                $(this).addClass('on');
+                $('.ueeshop_responsive_header .search_box').addClass('on');
+                $('.ueeshop_responsive_header').find('.menu_btn, .nav_bg, .nav, .son_nav').removeClass('on');
+            }
+        });
+        $('.ueeshop_responsive_header .nav_bg').on('click',function(){
+            $(this).removeClass('on');
+            $('.ueeshop_responsive_header').find('.nav, .son_nav, .menu_btn').removeClass('on');
+        });
+        $('.ueeshop_responsive_header .search_box .close_btn span').on('click',function(){
+            $(this).parents('.search_box').removeClass('on');
+            $('.ueeshop_responsive_header .search_btn').removeClass('on');
+        });
+        $('.ueeshop_responsive_header .language .close_btn span').on('click',function(){
+            $(this).parents('.language').removeClass('on');
+            $('.ueeshop_responsive_header .language_btn').removeClass('on');
+        })
+        $('.ueeshop_responsive_header .nav .list .title').on('click', function (e){
+            $('.ueeshop_responsive_header .hasub .sub').removeClass('on');
+            $('.ueeshop_responsive_header .son_nav').html($(this).parents('.list').find('.sub').html()).addClass('on');
+        });
+        $('.ueeshop_responsive_header .son_nav').on('click','.cate_close', function (e){
+            $('.ueeshop_responsive_header .son_nav').removeClass('on');
+        })
+        $('.ueeshop_responsive_header .son_nav').on('click', '.son_nav_title',function(){
+            $(this).parent('.item').find('.third_nav').toggle('on');
+            $(this).toggleClass('on');
+        });
+        $(function(){
+            $('.search_icon').on('click',function(){
+                if($('.search_box').hasClass('on')){
+                    $('.search_box').removeClass('on');
+                    $('.search_box').css({'opacity':'0'});
+                }else{
+                    $('.search_box').addClass('on');
+                    $('.search_box').css({'opacity':'1'});
+                }
+            });
+        });
+    </script>
+
+    <!--PC导航-->
+    <div id="header" class="responsive_pc_header index_header">
+        <div class="header"  style="position: relative;">
+            <div class="logo photo wow bounceInLeft">
+                <a href="home.html"><img src="./photo/logo.png" alt="Kamillas"><span></span></a>
+            </div>
+            <div style="position: absolute;right: 30px;bottom: -76px;">
+                <img id="music_btn" src="image/suspend.png" alt="" style="width: 44px;height: 36px;" onclick="music_start()">
+            </div>
+            <audio id="video1" src="https://qiniuyun.shankai.top/leisa_music.mp3" preload="auto" loop="loop"></audio>
+            <script>
+                var myVideo=document.getElementById("video1");
+                var limi = 0;
+                function music_start(){
+                    limi ++;
+                    if(limi%2==0){
+                        myVideo.pause();
+                        $("#music_btn").attr("src","image/suspend.png");
+                    }else{
+                        myVideo.play();
+                        $("#music_btn").attr("src","image/start.png");
+                    }
+                }
+            </script>
+            <div class="func">
+                <div class="icon search_icon">
+                    <img src="./photo/search_icon.png" alt="">
+                </div>
+                <div class="icon bounceInDown dialog">
+                    <a href="javascritp:;"><img src="./photo/user_icon1.png" alt="" style="width: 21px;height: 23px;"></a>
+                </div>
+
+                <div class="icon inquiry_icon">
+                    <a href="javascritpt:;"><img src="./photo/inquiry_icon2.png" alt=""></a>
+                    <span>0</span>
+                </div>
+
+            </div>
+
+            <div id="nav">
+
+                <div class="list wow bounceInDown">
+                    <a href="home.html" title="Home" class="home_color" style="letter-spacing: 3px;">Leisa</a>
+                </div>
+                <div class="list wow bounceInDown">
+                    <a href="../Products/products.html" title="线上商城" class="news_color">线上商城</a>
+                </div>
+                <div class="list wow bounceInDown">
+                    <a href="about.html" title="关于我们" class="about_color">关于我们</a>
+                </div>
+            </div>
+
+            <div class="search_box trans" style="opacity: 0;">
+                <form class="search" action="#" method="get">
+                    <input autocomplete="off" disableautocomplete="" type="text" class="fl" name="Keyword" placeholder="请输入关键字" notnull="">
+                    <input type="submit" class="fr" value="前往" style="cursor:pointer">
+                    <div class="clear">
+                    </div>
+                </form>
+            </div>
+
+
+            <div class="clear">
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--登陆验证-->
+<script>
+    $(function(){
+        var $el = $('.dialog');
+        $el.hDialog();
+        //返回顶部
+        $.goTop();
+        //提交并验证表单
+        $('.submitBtn').click(function() {
+            var PhoneReg = /^0{0,1}(13[0-9]|15[0-9]|153|156|18[7-9])[0-9]{8}$/ ; //手机正则
+            var $phone = $('.phone');
+            if($phone.val() == ''){
+                alert('手机还没填呢...'); $phone.focus();
+            }else if(!PhoneReg.test($phone.val())){
+                alert('手机格式错咯...'); $phone.focus();
+            }else{
+                alert('提交成功，2秒后自动关闭',2000,true);
+                setTimeout(function(){
+                    //$el.hDialog('close',{box:'#HBox'},'http://smwell.sinaapp.com/');  //也可以加跳转链接哦~
+                    $el.hDialog('close',{box:'#HBox'});
+                },2000);
+            }
+        });
+    });
+</script>
+
+<!--登陆html-->
+<div id="HBox" style="display: none;">
+    <ul class="user_load1">
+        <li>
+            <input style="display: none" type="radio" name="radio" id="radio1" checked="checked" >
+            <label for="radio1" style="border-right:1px #ddd solid;font-size: 15px;">登陆</label>
+            <div>
+                <form class="form1" action="#" method="post" onsubmit="return false;">
+                    <ul class="popup">
+                        <li style="margin-top: 40px;">
+                            <input type="text" name="phone" value="" placeholder="请输入手机号或用户名" class="ipt email">
+                        </li>
+                        <li>
+                            <input type="text" name="password" value="" placeholder="密码" class="ipt email">
+                        </li>
+                        <li style="margin-top: 0px;">
+                            <input type="submit" value="登录" class="submitBtn" style="margin-top: 20px;border: none;">
+                        </li>
+                        <li style="margin-top: 10px;text-align: center;width: 300px;" class="ho_a">
+                            <a href="javascript:;" style="color: #fff;margin-right: 10px;">验证码登录</a>
+                            <a href="javascript:;" style="color: #fff;">找回密码</a>
+                        </li>
+
+                    </ul>
+                </form>
+            </div>
+        </li>
+        <li>
+            <input style="display: none" type="radio" name="radio" id="radio2">
+            <label for="radio2" style="font-size: 15px;">注册</label>
+            <div>
+                <form class="form2" action="#" method="post" onsubmit="return false;">
+                    <ul class="popup">
+                        <li>
+                            <input type="text" name="phone" value="" placeholder="请输入手机号" class="ipt email">
+                        </li>
+                        <li style="position: relative;height: 35px;">
+                            <input style="width: 140px;" class="de_style_bug" type="text" class="kapkey" maxlength="6" placeholder="验证码">
+                            <button class="de_style_bug2" style="position: absolute; top: 0px;right: -17px;height: 35px;border-radius: 2px; margin-left:8px;width: 92px;color: #fff;background: #fdce24;border: none;">获取验证码</button>
+                        </li>
+                        <li>
+                            <input type="text" name="password" value="" placeholder="请输入密码" class="ipt email">
+                        </li>
+                        <li style="margin-top: 5px;margin-bottom: 0;">
+                            <label style="width: 300px">
+                                <input type="checkbox" style="height: 14px;float: left;" checked><span style="letter-spacing: 0px;font-size: 10px;float: left;padding-left: 5px;margin-top: 2px;">我接受《Leisa服务协议条款》</span>
+                            </label>
+                        </li>
+                        <li style="margin-top: 0px;"><input type="submit" value="注册并登录" class="submitBtn2" style="margin-top: 0;border: none;"></li>
+                    </ul>
+                </form>
+            </div>
+        </li>
+    </ul>
+
+</div>

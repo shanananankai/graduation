@@ -1,0 +1,293 @@
+header {
+    min-height: auto;
+    background-position: center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover
+}
+
+header .header-content {
+    position: relative;
+    width: 100%;
+    padding: 50% 15px;
+    text-align: center;
+    z-index: 10
+}
+
+#bgVideo,#compare .text-container {
+    position: absolute;
+    bottom: 0;
+    width: 100%
+}
+
+header .header-content .header-content-inner h1 {
+    margin-top: 0;
+    margin-bottom: 0;
+    text-transform: uppercase;
+    font-weight: 700
+}
+
+header .header-content .header-content-inner hr {
+    margin: 30px auto
+}
+
+header .header-content .header-content-inner p {
+    margin-bottom: 50px;
+    font-size: 16px;
+    font-weight: 300;
+    color: rgba(255,255,255,.7)
+}
+
+@media (min-width:768px) {
+    header {
+        min-height: 100%
+    }
+
+    header .header-content {
+        position: absolute;
+        top: 60%;
+        padding: 0 50px;
+        -webkit-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
+        transform: translateY(-50%)
+    }
+
+    header .header-content .header-content-inner {
+        margin-right: auto;
+        margin-left: auto;
+        max-width: 1000px
+    }
+
+    header .header-content .header-content-inner p {
+        margin-right: auto;
+        margin-left: auto;
+        max-width: 85%;
+        font-size: 18px
+    }
+}
+
+#bgVideo {
+    right: 0;
+    top: 0;
+    height: 100%;
+    max-height: 100%;
+    background-position: center center;
+    object-fit: cover;
+    z-index: 0
+}
+
+
+/*下面可以删除*/
+.section {
+    padding-top: 20px;
+    padding-bottom: 20px
+}
+
+.section-title {
+    padding-top: 30px;
+    padding-bottom: 20px
+}
+
+#home {
+    /*background: url(../img/index/home-bg.jpg) no-repeat;*/
+    background-size: cover;
+    color: #fff;
+    margin-top: -10px;
+    width: 100%;
+    height: auto
+}
+
+#home p {
+    font-weight: 400;
+    line-height: 2em
+}
+
+#home .sub-title,#home h1 {
+    line-height: 1.1;
+    color: #fff
+}
+
+#home img {
+    display: inline-block;
+    margin-top: 30px
+}
+
+#home h1 {
+    margin-bottom: 6px
+}
+
+#home .sub-title {
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 100px
+}
+
+#compare .text-container {
+    background-color: rgba(0,0,0,.5);
+    z-index: 10
+}
+
+#compare .text-container h2,#compare .text-container p {
+    color: #fff
+}
+
+#compare .good-bye {
+    background: center #f6f6f6;
+    height: 600px;
+    padding: 0
+}
+
+#compare .hello {
+    background: center #abd470;
+    height: 600px;
+    padding: 0
+}
+
+#compare .hello-xs {
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 400px;
+    padding: 0
+}
+
+#course-content button:hover,#maker-defination button:hover,#why-makerbean button:hover {
+    background: #f5e65d
+}
+
+#feature p,#feature1 p {
+    padding-top: 10px
+}
+
+#how-to .col-sm-4 {
+    padding-bottom: 30px
+}
+
+#course-content,#feature,#why-makerbean {
+    padding-top: 50px;
+    padding-bottom: 80px
+}
+
+#maker-defination {
+    padding-top: 50px;
+    padding-bottom: 50px
+}
+
+#maker-defination .fa {
+    font-size: 60px
+}
+
+#maker-defination h3 {
+    font-size: 20px
+}
+
+#course-content .fa {
+    color: #abd470;
+    font-size: 60px;
+    margin-top: 20px
+}
+
+#course-content h3 {
+    font-size: 20px
+}
+
+#why-makerbean .fa {
+    color: #abd470;
+    font-size: 60px
+}
+
+#why-makerbean h3 {
+    font-size: 20px
+}
+
+#why-makerbean img.icon {
+    width: 64px
+}
+
+#why-makerbean #wechat-group-img {
+    width: 100px;
+    margin-top: 30px
+}
+
+#feature .fa,#feature1 .fa {
+    border-radius: 50%;
+    color: #fff;
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    margin-right: 20px;
+    text-align: center
+}
+
+#feature .fa {
+    background: #abd470
+}
+
+#feature button:hover {
+    background: #f5e65d
+}
+
+#feature1 {
+    padding-top: 60px;
+    padding-bottom: 60px
+}
+
+#feature1 .fa {
+    background: #abd470
+}
+
+#feature1 a {
+    color: #60B541
+}
+
+footer {
+    background: #fff;
+    font-weight: 400;
+    text-align: center;
+    padding: 20px
+}
+
+@media screen and (max-width:991px) {
+    .templatemo-box {
+        margin-bottom: 30px
+    }
+
+    #pricing .active {
+        bottom: 0
+    }
+
+    .pricing {
+        margin-bottom: 20px
+    }
+
+    #download img,#feature img {
+        margin-top: 30px
+    }
+
+    #feature1 img {
+        margin-bottom: 30px
+    }
+}
+
+@media screen and (max-width:767px) {
+    .navbar-default .nav li a {
+        height: auto;
+        line-height: 2em
+    }
+
+    #download,#feature,#pricing {
+        padding-top: 20px;
+        padding-bottom: 40px
+    }
+
+    #contact .overlay {
+        padding-top: 40px
+    }
+}
+
+@media screen and (max-width:360px) {
+    .pricing {
+        padding-bottom: 40px
+    }
+}
